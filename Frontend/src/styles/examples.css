@@ -1,0 +1,131 @@
+.examples-heading {
+  font-family: 'Fraunces', serif;
+  font-size: 2rem;
+  font-weight: 500;
+  color: var(--paper);
+  text-align: center;
+  margin: 0 0 2.5rem 0;
+  letter-spacing: -0.01em;
+}
+
+.examples-heading::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 3px;
+  background-color: #5dade2;
+  margin: 0.75rem auto 0;
+  border-radius: 2px;
+}
+
+
+#examples {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  padding: 2rem;
+  align-items: center;
+}
+
+.example-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.example-cell {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  flex: 1 1 200px;
+  min-width: 140px;
+  max-width: 320px;
+}
+
+.example-cell img {
+  width: 100%;
+  max-width: 320px;
+  max-height: 570px;
+  height: auto;
+  object-fit: contain;
+  border: 1px solid rgba(140, 175, 220, 0.2);
+  box-shadow:
+    0 20px 44px -10px rgba(93, 173, 226, 0.4),
+    0 8px 22px -6px rgba(167, 139, 250, 0.3),
+    0 4px 14px -4px rgba(0, 0, 0, 0.8);
+}
+
+.example-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 30px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--paper-dim);
+}
+
+.example-arrow {
+  font-size: 40px;
+  color: #5dade2; /* sky-blue accent to match your palette */
+  align-self: center;
+}
+
+.example-row {
+  opacity: 0;
+  transform: scale(0.6);
+  transition: opacity 0.99s ease-out, transform 0.99s ease-out;
+}
+
+.example-row.is-visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 720px) {
+  #examples {
+    padding: 1.25rem;
+    gap: 2rem;
+  }
+
+  .example-row {
+    gap: 1rem;
+  }
+
+  .example-label {
+    font-size: 18px;
+  }
+
+  .example-arrow {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 480px) {
+  .examples-heading {
+    font-size: 1.5rem;
+  }
+
+  #examples {
+    padding: 1rem 0.75rem;
+  }
+
+  .example-row {
+    gap: 0.5rem 0.75rem;
+  }
+
+  .example-cell {
+    flex: 1 1 130px;
+    min-width: 110px;
+  }
+
+  .example-label {
+    font-size: 14px;
+  }
+
+  .example-arrow {
+    font-size: 22px;
+  }
+}

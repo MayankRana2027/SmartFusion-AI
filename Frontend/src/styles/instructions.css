@@ -1,0 +1,187 @@
+.instructions {
+    width: 95%;
+    max-width: 1100px;
+    margin: 20px auto;
+    padding: 0 4px;
+}
+
+.instructions p,
+.instructions ul {
+    margin: 0 0 18px;
+    font-family: var(--font-mono);
+    font-size: 15px;
+    line-height: 1.8;
+    color: var(--paper-dim);
+}
+
+.instructions p:last-child,
+.instructions ul:last-child {
+    margin-bottom: 0;
+}
+
+.instructions__greeting {
+    font-family: var(--font-mono);
+    font-size: 20px !important;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    color: var(--sky-accent);
+    margin: 0 0 10px;
+    text-align: center;
+}
+
+.instructions__heading {
+    margin: 0 0 12px;
+    font-family: var(--font-display);
+    font-style: italic;
+    font-weight: 600;
+    font-size: 28px;
+    letter-spacing: 0.01em;
+    text-align: center;
+    background: linear-gradient(90deg, #5dade2 0%, #a78bfa 50%, #f472b6 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+}
+
+.instructions__heading::after {
+    content: '';
+    display: block;
+    width: 48px;
+    height: 3px;
+    margin: 16px auto 0;
+    border-radius: 2px;
+    background: linear-gradient(90deg, var(--sky-accent), var(--accent2, #a78bfa));
+}
+
+.instructions__intro {
+    color: var(--paper);
+    text-align: center;
+    max-width: 1100px;
+    margin: 18px auto 28px;
+}
+
+.instructions__step-label {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--sky-accent);
+    margin-bottom: 14px;
+}
+
+.instructions__list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 22px;
+    text-align: left;
+    counter-reset: step;
+}
+
+.instructions__list li {
+    position: relative;
+    counter-increment: step;
+    padding: 3px 0 18px 46px;
+    transition: padding-left 0.2s ease;
+}
+
+.instructions__list li:last-child {
+    padding-bottom: 0;
+}
+
+.instructions__list li::before {
+    content: counter(step);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--sky-accent) 0%, #a78bfa 100%);
+    color: #0a0a0a;
+    font-family: var(--font-mono);
+    font-size: 13px;
+    font-weight: 700;
+    box-shadow: 0 4px 14px -4px rgba(93, 173, 226, 0.55);
+}
+
+.instructions__list strong {
+    color: var(--paper);
+    font-weight: 600;
+}
+
+.instructions strong {
+    color: var(--sky-accent-light);
+    font-weight: 600;
+}
+
+.instructions__closing {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 15px;
+    color: var(--paper);
+    text-align: center;
+    padding-top: 18px;
+    margin-top: 6px;
+    border-top: 1px solid rgba(93, 173, 226, 0.14);
+}
+
+body.theme-light .instructions__closing {
+    border-top-color: rgba(47, 127, 193, 0.25);
+}
+
+@media (max-width: 480px) {
+    .instructions {
+        width: calc(100% - 24px);
+        padding: 0;
+    }
+
+    .instructions__heading {
+        font-size: 22px;
+    }
+
+    .instructions__intro {
+        margin: 14px auto 22px;
+    }
+}
+
+/* ===== Start Styling — primary call to action ===== */
+#btn {
+  display: block;
+  width: fit-content;
+  align-self: center;
+  margin: 8px auto 40px;
+  font-family: var(--font-mono);
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #0a0a0a;
+  background: linear-gradient(90deg, #5dade2 0%, #a78bfa 50%, #f472b6 100%);
+  background-size: 220% 100%;
+  background-position: 0% 0%;
+  padding: 1rem 2.6rem;
+  border-radius: 10px;
+  box-shadow: 0 0 0 0 rgba(93, 173, 226, 0);
+  transition: background-position 0.5s ease, transform 0.25s ease-out, box-shadow 0.3s ease;
+}
+
+#btn:hover {
+  background-position: 100% 0%;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px -8px rgba(93, 173, 226, 0.55), 0 10px 28px -8px rgba(244, 114, 182, 0.35);
+}
+
+#btn:active {
+  transform: translateY(0);
+}
+
+#btn:focus-visible {
+  outline: 2px solid var(--sky-accent);
+  outline-offset: 3px;
+}
